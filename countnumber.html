@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #pressed{
+      height: 50px;
+      width: 50px;
+    }
+    .js-blue{
+      background-color: blue;
+    }
+    .js-gree{
+      background-color:green;
+    }
+  </style>
+</head>
+<body>
+  <button id="pressed" onclick="clickbutton()">0</button>
+  <script>
+    let butttonpreesed=document.getElementById('pressed');
+    let count=localStorage.getItem('count')||0;
+     function clickbutton(){
+      count++;
+      localStorage.setItem('count',count);
+     update();
+      
+     }
+     function update(){
+      if(count%2==0){
+        butttonpreesed.classList.add('js-blue');
+      }else{
+  butttonpreesed.classList.add('js-gree');
+      }
+      butttonpreesed.innerText=count;
+      
+     }
+     update();
+
+  </script>
+</body>
+</html>
